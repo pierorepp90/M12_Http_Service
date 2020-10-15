@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "4d13b1be-9463-4e96-9b49-a83c1d5dcb11",
+		"name": "M12_Simple_HTTP_Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add employee with params(invalid job)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/add/?name=Piero&job=InvaLi djoB.123",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"add",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Piero"
+						},
+						{
+							"key": "job",
+							"value": "InvaLi djoB.123"
+						}
+					]
+				},
+				"description": "Create an employee with a defaultjob and 0 salary"
+			},
+			"response": []
+		},
+		{
+			"name": "Add employee with params",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/add?name=Daniel&job=junior",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"add"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Daniel"
+						},
+						{
+							"key": "job",
+							"value": "junior"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add employee with body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Carolina\",\r\n    \"job\": \"Senior\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees/addbody",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"addbody"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all employees",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees/show",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show employee by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/showid/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"showid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show employee by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/showname/Piero",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"showname",
+						"Piero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show employee by job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/showjob/junior",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"showjob",
+						"junior"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee with RequestBody",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Josesito\",\r\n    \"job\" : \"Architect\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees/updatebody/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"updatebody",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee with RequestParam",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/update/1?name=Piero&job=junior",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Piero"
+						},
+						{
+							"key": "job",
+							"value": "junior"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee with id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee with Body",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"name\":\"Piero\",\r\n    \"job\":\"DEFAULTJOB\",\r\n    \"salary\":\"0\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
